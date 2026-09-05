@@ -5,7 +5,9 @@ node_modules/
 npm-debug.log*
 # Environment
 .env
-.env.*.local# OS/editor
+.env.*.local
+
+# OS/editor
 .DS_Store
 Thumbs.db
 .vscode/
