@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RentLo - Units</title>
+  <meta name="description" content="SIT725 Task 3.2P - RentLo units overview page">
+  <meta name="author" content="Sayek s225259717">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Custom Style Sheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <nav class="indigo darken-2">
+    <div class="nav-wrapper navbar-size">
+      <a href="#" class="brand-logo"><img class="logo-size" src="images/logo.png" alt="RentLo logo">RentLo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="active"><a href="#">Units</a></li>
+        <li><a href="#">Statements</a></li>
+        <li><a target="_blank" href="https://github.com/Sayek17/SIT725_s225259717">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main-body">
+    <div class="container">
+
+      <div class="row">
+        <div class="col s12 center-align">
+          <h4 id="heading">Units in the building</h4>
+          <p class="flow-text grey-text text-darken-1">
+            RentLo prepares the monthly rent and utility statement for each unit. This page lists the
+            five units with their September 2026 total. Open a card to see how that total was made up.
+          </p>
+        </div>
+        <div class="col s12 center-align">
+          <img class="materialboxed banner-image" src="images/banner.jpg" alt="The building">
+        </div>
+        <div class="col s12 center-align">
+          <a class="waves-effect waves-light btn-large amber darken-2 modal-trigger add-button" id="addEntryButton"
+            data-target="modal1"><i class="material-icons left">add</i>Log a bill entry</a>
+        </div>
+      </div>
+
+      <div class="row center-align" id="loader">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+        <p class="grey-text">Loading units from the server...</p>
+      </div>
+
+      <div class="row" id="card-section"></div>
+
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h5 class="indigo-text text-darken-2">Log a bill entry</h5>
+        <form id="entryForm">
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <select id="unit">
+                <option value="" disabled selected>Choose a unit</option>
+                <option value="Unit 1">Unit 1</option>
+                <option value="Unit 2">Unit 2</option>
+                <option value="Unit 3">Unit 3</option>
+                <option value="Unit 4">Unit 4</option>
+                <option value="Unit 5">Unit 5</option>
+              </select>
+              <label>Unit</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <select id="billType">
+                <option value="" disabled selected>Choose a bill</option>
+                <option value="Rent">Rent</option>
+                <option value="Water">Water</option>
+                <option value="Gas">Gas</option>
+                <option value="Meter charge">Meter charge</option>
+                <option value="Electricity">Electricity</option>
+                <option value="Other">Other</option>
+              </select>
+              <label>Bill type</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="amount" type="number" class="validate">
+              <label for="amount">Amount in AUD</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="month" type="text" class="validate" value="September 2026">
+              <label for="month">Month</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close waves-effect btn-flat">Cancel</a>
+        <a class="waves-effect waves-light btn indigo darken-2" id="formSubmit">Save entry</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer indigo darken-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">RentLo</h5>
+          <p class="grey-text text-lighten-4">
+            Monthly rent and utility statements for a five unit building.
+            Built for SIT725 Task 3.2P with Express and Materialize.
+          </p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" target="_blank"
+                href="https://github.com/Sayek17/SIT725_s225259717">Repository</a></li>
+            <li><a class="grey-text text-lighten-3" target="_blank"
+                href="https://materializecss.com/">Materialize</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright indigo darken-4">
+      <div class="container">Sayek, student ID 225259717</div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
