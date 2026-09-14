@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIT725 Task 2.2P</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo left page-title">Adder developed by s225259717</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h5>SIT725 Task 2.2P Express Web Server</h5>
+    <p>Enter two numbers and press a button. The addition is done on the server.</p>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="num1" type="number" value="12">
+        <label class="active" for="num1">First number</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="num2" type="number" value="4">
+        <label class="active" for="num2">Second number</label>
+      </div>
+    </div>
+
+    <button id="getButton" class="btn">Add with GET</button>
+    <button id="postButton" class="btn">Add with POST</button>
+
+    <p id="result" class="result-line">No calculation yet</p>
+  </div>
+
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

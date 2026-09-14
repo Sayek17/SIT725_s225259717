@@ -1,0 +1,23 @@
+{
+  "name": "sit725-2-2p-adder",
+  "version": "1.0.0",
+  "description": "SIT725 Task 2.2P Express web server with an add web service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "REST",
+    "Materialize",
+    "HTML",
+    "JS",
+    "CSS"
+  ],
+  "author": "Sayek s225259717",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
