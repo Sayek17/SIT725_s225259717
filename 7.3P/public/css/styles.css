@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #f4f6fb;
+}
+
+.main-body {
+    flex: 1 0 auto;
+    padding-bottom: 40px;
+}
+
+.navbar-size {
+    width: 95%;
+    margin: 0 auto;
+}
+
+nav .brand-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-size {
+    height: 40px;
+    margin-right: 10px;
+}
+
+#heading {
+    margin-top: 40px;
+    color: #283593;
+}
+
+.banner-image {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.add-button {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.unit-photo {
+    height: 190px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.tenant-line {
+    color: #616161;
+    margin: 6px 0 10px 0;
+}
+
+.unit-total {
+    font-size: 24px;
+    font-weight: 500;
+    color: #283593;
+    margin: 10px 0 4px 0;
+}
+
+.card-reveal {
+    color: black;
+}
+
+.card-reveal .card-title,
+.card-reveal p {
+    color: black;
+}
+
+#loader {
+    margin-top: 30px;
+}
+
+.card-reveal ul.card-details {
+    padding-left: 20px;
+    margin: 16px 0;
+}
+
+.card-reveal ul.card-details li {
+    list-style-type: disc;
+    margin-bottom: 8px;
+}
+.outstanding-badge {
+    display: inline-block;
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 10px 24px;
+    margin: 6px 0 18px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.outstanding-label {
+    display: block;
+    font-size: 12px;
+    color: #616161;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.outstanding-value {
+    display: block;
+    font-size: 28px;
+    font-weight: 600;
+    color: #d84315;
+}
+
+.payment-btn {
+    margin-top: 6px;
+}
+
+#activity-row {
+    margin-top: 10px;
+}
+
+#activity-feed {
+    max-height: 220px;
+    overflow-y: auto;
+}
