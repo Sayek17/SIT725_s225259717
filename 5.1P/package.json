@@ -1,0 +1,23 @@
+{
+  "name": "sit725-5-1p-books",
+  "version": "1.0.0",
+  "description": "SIT725 Task 5.1P - a read-only Books catalog built with the week 5 MVC structure",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "MVC",
+    "REST",
+    "HTML",
+    "JS",
+    "CSS"
+  ],
+  "author": "Sayek (s225259717)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
