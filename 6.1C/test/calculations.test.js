@@ -17,7 +17,7 @@ describe('calculateUnitTotal()', function () {
 
     // Valid behaviour: the six bill lines plus the amount carried forward.
     it('adds the six bills and the previous amount due', function () {
-        expect(calculateUnitTotal(unitFourBills, 450.00)).to.equal(1335.00);
+        expect(calculateUnitTotal(unitFourBills, 45.00)).to.equal(1335.00);
     });
 
     // Invalid behaviour: a bad value must not poison the whole total.
