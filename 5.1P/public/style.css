@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  background: #f6f5f1;
+  color: #202c2b;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+main { max-width: 720px; margin: 48px auto; padding: 0 24px; }
+h1 { margin-bottom: 8px; }
+ul { list-style: none; padding: 0; }
+li { background: white; border: 1px solid #d9dfdc; border-radius: 8px; margin: 16px 0; padding: 20px 24px; }
+h2 { font-size: 1.15rem; margin: 0 0 4px; }
+li p { margin: 0; color: #52625f; }

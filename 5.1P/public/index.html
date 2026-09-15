@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books Catalog</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Books Catalog</h1>
+    <p>Explore our collection of five books.</p>
+    <p id="message" role="status">Loading books...</p>
+    <ul id="books"></ul>
+  </main>
+  <script>
+    const list = document.getElementById('books');
+    const message = document.getElementById('message');
+
+    // Ask the API for the catalog and draw one list item per book.
+    const loadBooks = async () => {
+      try {
+        const response = await fetch('/api/books');
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+        const body = await response.json();
+        addBooks(body.data);
+      } catch (error) {
+        console.error('Error fetching books:', error);
+        message.textContent = 'Unable to load books. Please refresh to try again.';
+      }
+    };
+
+    // Build the list from the records the API sent back.
+    const addBooks = (books) => {
+      list.replaceChildren();
+      books.forEach((book) => {
+        const item = document.createElement('li');
+        const title = document.createElement('h2');
+        const author = document.createElement('p');
+        title.textContent = book.title;
+        author.textContent = book.author;
+        item.append(title, author);
+        list.append(item);
+      });
+      message.textContent = books.length ? '' : 'No books found.';
+    };
+
+    // The script sits after the markup, so the list is ready and this runs on load.
+    loadBooks();
+  </script>
+</body>
+</html>
