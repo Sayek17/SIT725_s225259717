@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books Catalogue</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Books Catalogue developed by s225259717</h1>
+    <p>Click the button below to get all books from the server:</p>
+    <button id="getBooksBtn" type="button">Get all books</button>
+
+    <p id="message" role="status"></p>
+    <ul id="books"></ul>
+
+    <div id="details" hidden>
+      <h2>Book details</h2>
+      <dl>
+        <dt>Title:</dt><dd id="detailTitle"></dd>
+        <dt>Author:</dt><dd id="detailAuthor"></dd>
+        <dt>Year:</dt><dd id="detailYear"></dd>
+        <dt>Genre:</dt><dd id="detailGenre"></dd>
+        <dt>Summary:</dt><dd id="detailSummary"></dd>
+        <dt>Price (AUD):</dt><dd id="detailPrice"></dd>
+      </dl>
+    </div>
+  </main>
+
+  <script>
+    const button = document.getElementById('getBooksBtn');
+    const list = document.getElementById('books');
+    const message = document.getElementById('message');
+    const details = document.getElementById('details');
+
+    // Asks the API for every book and draws one list row per book.
+    const loadBooks = async () => {
+      message.textContent = 'Loading...';
+      details.hidden = true;
+      try {
+        const response = await fetch('/api/books');
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+        const body = await response.json();
+        addBooks(body.data);
+      } catch (error) {
+        console.error('Error fetching books:', error);
+        message.textContent = 'Unable to load books. Please try again.';
+      }
+    };
+
+    // The list shows the title and the price only, as the task asks.
+    const addBooks = (books) => {
+      list.replaceChildren();
+      books.forEach((book) => {
+        const item = document.createElement('li');
+        item.textContent = book.title + ' ' + book.price + ' ' + book.currency;
+        item.addEventListener('click', () => loadOneBook(book.id));
+        list.append(item);
+      });
+      message.textContent = books.length ? '' : 'No books found.';
+    };
+
+    // Asks the API for the book that was clicked and fills the details panel,
+    // so only one book is ever shown at a time.
+    const loadOneBook = async (id) => {
+      try {
+        const response = await fetch('/api/books/' + id);
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+        const body = await response.json();
+        showDetails(body.data);
+      } catch (error) {
+        console.error('Error fetching book:', error);
+        message.textContent = 'Unable to load that book.';
+      }
+    };
+
+    const showDetails = (book) => {
+      document.getElementById('detailTitle').textContent = book.title;
+      document.getElementById('detailAuthor').textContent = book.author;
+      document.getElementById('detailYear').textContent = book.year;
+      document.getElementById('detailGenre').textContent = book.genre;
+      document.getElementById('detailSummary').textContent = book.summary;
+      document.getElementById('detailPrice').textContent = book.price;
+      details.hidden = false;
+    };
+
+    button.addEventListener('click', loadBooks);
+  </script>
+</body>
+</html>
